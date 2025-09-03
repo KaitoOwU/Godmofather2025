@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     // interaction
     private bool _canInteract;
     private IInteractable _iInteractable;
+    private bool _hasControls = true;
 
     private void Awake()
     {
@@ -85,6 +86,8 @@ public class PlayerController : MonoBehaviour
    
     private void FixedUpdate()
     {
+        if(!_hasControls) return;
+
         Vector2 targetVelocity = Vector2.zero;
 
         switch (_state)
@@ -141,27 +144,41 @@ public class PlayerController : MonoBehaviour
         _rb.linearVelocity = _velocity;
     }
 
-    private void Interact()
-    {
-        _iInteractable.Interact();
-    }
-
+    #region Move
     public void Climb(Vector3 position)
     {
-        _state = STATE.CLIMB;
+        // -- DEBUG --
+        //Debug.Log("climb");
 
+        _hasControls = false;
+
+        _velocity = Vector2.zero;
         _rb.linearVelocity = Vector2.zero;
         transform.position = position;
+
+
+        _state = STATE.CLIMB;
+
+        _hasControls = true;
 
     }
 
     public void Walk()
     {
+        // -- DEBUG --
+        //Debug.Log("walk");
+
         _state = STATE.WALK;
     }
+    #endregion
 
+    #region Interfaces
 
-    #region Trigger
+    private void Interact()
+    {
+        _iInteractable.Interact();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent<ITrigger>(out var enter))
@@ -182,6 +199,13 @@ public class PlayerController : MonoBehaviour
         if (other.TryGetComponent<ITrigger>(out var exit))
         {
             exit.OnExit();
+        }
+
+        //Interact
+        if (other.TryGetComponent<IInteractable>(out var interactable))
+        {
+            _canInteract = false;
+            _iInteractable = null;
         }
     }
 

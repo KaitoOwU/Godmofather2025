@@ -7,8 +7,9 @@ public class Ladder : MonoBehaviour, IInteractable, ITrigger
     #region Variables
     [Header("Climb")]
     [SerializeField] private Transform _startingPoint;
+    [SerializeField] private Collider2D _libraryColl;
 
-    [Header("Components")]
+    [Header("Ladder Coll")]
     [SerializeField] private Collider2D _ladderColl;
     [SerializeField] private Collider2D _interactColl;
 
@@ -65,7 +66,7 @@ public class Ladder : MonoBehaviour, IInteractable, ITrigger
             _pc.Walk();
 
             // -- DEBUG --
-            Debug.Log("walk ladder");
+            //Debug.Log("walk ladder");
 
             // -- BEHAVIOUR --
 
@@ -75,6 +76,10 @@ public class Ladder : MonoBehaviour, IInteractable, ITrigger
             _interactColl.enabled = true;
             _interactColl.isTrigger = true;
 
+            // -- TO EDIT --
+            // library coll
+            _libraryColl.enabled = true;
+
         }
         // CLIMB
         else if(state == (int)STATE.CLIMB) 
@@ -83,12 +88,17 @@ public class Ladder : MonoBehaviour, IInteractable, ITrigger
             _pc.Climb(_startingPoint.position);
 
             // -- DEBUG --
-            Debug.Log("climb ladder");
+            //Debug.Log("climb ladder");
 
             // -- BEHAVIOUR --
-            _ladderColl.isTrigger = true;
+            _rb.linearVelocity = Vector2.zero;
 
+            _ladderColl.isTrigger = true;
             _interactColl.enabled = false;
+
+            // -- TO EDIT --
+            // library coll
+            _libraryColl.enabled = false;
         }
     }
 
