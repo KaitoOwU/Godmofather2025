@@ -1,16 +1,21 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public static GameManager Instance { get; private set; }
+    
+    public BookBalanceManager BookBalance { get; private set; }
+    public MalusManager Malus { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if(Instance != null)
+            Destroy(gameObject);
+
+        Instance = this;
+
+        BookBalance = FindAnyObjectByType<BookBalanceManager>();
+        Malus = FindAnyObjectByType<MalusManager>();
     }
 }

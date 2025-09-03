@@ -32,7 +32,7 @@ public class Book : MonoBehaviour
             BalanceGoodSpot.rectTransform.position.z);
 
         _balanceCursorInterval =
-            Mathf.Clamp(_balanceCursorInterval + Input.GetAxis("Horizontal") * Time.deltaTime * 2.0f, -1f, 1f);
+            Mathf.Clamp(_balanceCursorInterval + Input.GetAxis("Horizontal") * (GameManager.Instance.Malus.AreControlsReversed ? -1 : 1) * Time.deltaTime * 2.0f, -1f, 1f);
         BalanceCursor.rectTransform.position = new Vector3(_balanceCursorInterval * GaugeWideness, BalanceCursor.rectTransform.position.y,
             BalanceCursor.rectTransform.position.z);
 
@@ -43,7 +43,6 @@ public class Book : MonoBehaviour
 
             if (_completionState >= 1.0f)
             {
-                
                 Destroy(gameObject);
             }
         }
