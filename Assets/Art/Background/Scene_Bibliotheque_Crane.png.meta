@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scene_Bibliotheque_Crane_0: -5513703852913179397
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

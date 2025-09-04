@@ -22,6 +22,7 @@ public class FreePlace : MonoBehaviour
 
     //Components
     private SpriteRenderer _spriteRenderer;
+    [SerializeField] BookBalanceManager _bookMgr;
 
     private void Awake()
     {
@@ -29,6 +30,11 @@ public class FreePlace : MonoBehaviour
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _defaultColor = _spriteRenderer.color;
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void OnMouseEnter()
@@ -58,6 +64,7 @@ public class FreePlace : MonoBehaviour
         if (!_canInteract) return;
 
         _OnClic?.Invoke();
+        //BookBalanceManager.OnBookPlacementStarted?.Invoke(Vector3.zero);
     }
 
     public void SetVisibility(bool visible)
