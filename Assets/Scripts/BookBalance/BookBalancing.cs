@@ -4,7 +4,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Book : MonoBehaviour
+public class BookBalancing : MonoBehaviour
 {
     [field:SerializeField] public Image BalanceGauge { get; private set; }
     [field:SerializeField] public Image BalanceGoodSpot { get; private set; }
