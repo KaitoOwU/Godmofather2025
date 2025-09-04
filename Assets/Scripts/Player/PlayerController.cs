@@ -170,14 +170,28 @@ public class PlayerController : MonoBehaviour
 
         _state = STATE.WALK;
     }
+
+    public void SetControls(bool hasControls)
+    {
+        _hasControls = hasControls;
+    }
+
     #endregion
 
     #region Interfaces
 
+    //Interaction
     private void Interact()
     {
         _iInteractable.Interact();
     }
+
+    public void ResetInteractablity()
+    {
+        _iInteractable = null;
+    }
+
+    //Trigger
 
     private void OnTriggerEnter2D(Collider2D other)
     {

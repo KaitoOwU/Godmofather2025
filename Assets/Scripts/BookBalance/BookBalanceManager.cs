@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BookBalanceManager : MonoBehaviour
 {
@@ -13,15 +14,16 @@ public class BookBalanceManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha0))
-        //{
-        //    OnBookPlacementStarted?.Invoke(Vector3.zero);
-        //}
     }
 
     public void BookPlacementStarted(Vector3 position)
     {
         OnBookPlacementStarted?.Invoke(position);
+    }
+
+    public void BookPlacementCompleted()
+    {
+        OnBookPlacementCompleted?.Invoke();
     }
 
     private void OnEnable()

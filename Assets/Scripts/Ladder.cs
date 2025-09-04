@@ -1,6 +1,7 @@
 using UnityEngine;
 
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Ladder : MonoBehaviour, IInteractable, ITrigger
 {
@@ -12,6 +13,10 @@ public class Ladder : MonoBehaviour, IInteractable, ITrigger
     [Header("Ladder Coll")]
     [SerializeField] private Collider2D _ladderColl;
     [SerializeField] private Collider2D _interactColl;
+
+    [Header("Ladder Coll")]
+    [SerializeField] private Transform _leftPoint;
+    [SerializeField] private Transform _rightPoint;
 
     [Header("Events")]
     [SerializeField] private UnityEvent _OnTriggerEnter;
@@ -41,6 +46,12 @@ public class Ladder : MonoBehaviour, IInteractable, ITrigger
     void Update()
     {
 
+    }
+
+    void FixedUpdate()
+    {
+        float posX = Mathf.Clamp(transform.position.x, _leftPoint.position.x, _rightPoint.position.x);
+        transform.position = new Vector3 (posX, transform.position.y,0);
     }
 
 

@@ -4,6 +4,8 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine.Events;
+
 public class BookBalancing : MonoBehaviour
 {
     [field:SerializeField] public Image BalanceGauge { get; private set; }
@@ -12,6 +14,10 @@ public class BookBalancing : MonoBehaviour
     [field:SerializeField] public Transform BookTransform { get; private set; }
     [field:SerializeField] public Color MinColor { get; private set; }
     [field:SerializeField] public Color MaxColor { get; private set; }
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent _OnCompletion;
+    [SerializeField] private UnityEvent _OnDefeat;
 
     private float _balanceInterval;
     private float _balanceCursorInterval;
@@ -43,6 +49,9 @@ public class BookBalancing : MonoBehaviour
 
             if (_completionState >= 1.0f)
             {
+                // call win
+                _OnCompletion?.Invoke();
+
                 Destroy(gameObject);
             }
         }

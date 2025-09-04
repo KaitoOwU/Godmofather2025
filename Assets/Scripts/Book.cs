@@ -19,4 +19,5 @@ public class Book : MonoBehaviour, IInteractable
 
         _inventoryMgr.GetItem(this);
     }
+
 }

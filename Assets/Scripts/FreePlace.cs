@@ -25,6 +25,7 @@ public class FreePlace : MonoBehaviour
 
     //Manager
     BookBalanceManager _bookMgr;
+    InventoryManager _inventoryMgr;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class FreePlace : MonoBehaviour
     private void Start()
     {
         _bookMgr = FindAnyObjectByType<BookBalanceManager>();
+        _inventoryMgr = FindAnyObjectByType<InventoryManager>();
     }
 
 
