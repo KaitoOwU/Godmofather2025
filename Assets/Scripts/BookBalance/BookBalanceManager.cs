@@ -13,10 +13,15 @@ public class BookBalanceManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            OnBookPlacementStarted?.Invoke(Vector3.zero);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha0))
+        //{
+        //    OnBookPlacementStarted?.Invoke(Vector3.zero);
+        //}
+    }
+
+    public void BookPlacementStarted(Vector3 position)
+    {
+        OnBookPlacementStarted?.Invoke(position);
     }
 
     private void OnEnable()

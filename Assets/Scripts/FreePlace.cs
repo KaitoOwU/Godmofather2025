@@ -11,7 +11,7 @@ public class FreePlace : MonoBehaviour
     [SerializeField] private Color _interactableColor = Color.red;
 
     [Header("Events")]
-    [SerializeField] private UnityEvent _OnClic;
+    [SerializeField] private UnityEvent<Vector3> _OnClic;
 
     //Hover
     private Vector3 _scaleInit;
@@ -22,7 +22,9 @@ public class FreePlace : MonoBehaviour
 
     //Components
     private SpriteRenderer _spriteRenderer;
-    [SerializeField] BookBalanceManager _bookMgr;
+
+    //Manager
+    BookBalanceManager _bookMgr;
 
     private void Awake()
     {
@@ -34,8 +36,9 @@ public class FreePlace : MonoBehaviour
 
     private void Start()
     {
-        
+        _bookMgr = FindAnyObjectByType<BookBalanceManager>();
     }
+
 
     private void OnMouseEnter()
     {
@@ -63,8 +66,7 @@ public class FreePlace : MonoBehaviour
     {
         if (!_canInteract) return;
 
-        _OnClic?.Invoke();
-        //BookBalanceManager.OnBookPlacementStarted?.Invoke(Vector3.zero);
+        _OnClic?.Invoke(transform.position);
     }
 
     public void SetVisibility(bool visible)
