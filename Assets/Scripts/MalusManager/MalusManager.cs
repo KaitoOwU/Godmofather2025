@@ -3,13 +3,13 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class MalusManager : MonoBehaviour
 {
     
     [field:SerializeField] public float MalusDuration { get; private set; }
-    [field:SerializeField] public Transform MalusesUI { get; private set; }
+    [field:SerializeField] public RectTransform MalusesUI { get; private set; }
     
     public float SpeedMultiplier { get; private set; }
     public bool AreControlsReversed { get; private set; }
@@ -50,16 +50,31 @@ public class MalusManager : MonoBehaviour
             case MalusType.RANDOM_DVD_SPRITE:
 
                 Image[] spriteList = Resources.LoadAll<Image>("Sprites");
-                Image spriteToAdd = spriteList[UnityEngine.Random.Range(0, spriteList.Length)];
+                Image spriteToAdd = spriteList[Random.Range(0, spriteList.Length)];
 
                 Image img = Instantiate(spriteToAdd, MalusesUI.transform);
 
-                yield return img.DOColor(new(1, 1, 1, 0.5f), 0.5f).WaitForCompletion();
+                img.DOColor(new(1, 1, 1, 0.5f), 0.5f);
 
                 float duration = 0;
-                while (duration < MalusDuration)
+                
+                Vector2[] directions = 
                 {
-                    
+                    new(1, 1),
+                    new(1, -1),
+                    new(-1, -1),
+                    new(-1, 1)
+                };
+                int currentDirection = Random.Range(0, 4);
+                
+                while (duration < MalusDuration + 0.5f)
+                {
+                    img.rectTransform.position += (Vector3)directions[currentDirection] * (Time.deltaTime * 3.0f);
+                    if (!MalusesUI.rect.Contains(img.rectTransform.anchoredPosition))
+                    {
+                        currentDirection++;
+                        if (currentDirection > 3) currentDirection = 0;
+                    }
                     
                     duration += Time.deltaTime;
                     yield return null;
@@ -67,7 +82,7 @@ public class MalusManager : MonoBehaviour
                 
                 yield return img.DOColor(new(1, 1, 1, 0f), 0.5f).WaitForCompletion();
                 
-                Destroy(img);
+                Destroy(img.gameObject);
                 break;
         }
     }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 50ae8f0e5086c234f830729f1ac9dc55
+guid: 33da122a8cfb3994d9302b1eb766efda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3786449227550518629
-    second: ValorantBetterTheFinals_0
+      213: -4097774108339587424
+    second: JSP_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ValorantBetterTheFinals_0
+      name: JSP_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1400
-        height: 1080
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b929ccf2d74d37bc0800000000000000
-      internalID: -3786449227550518629
+      spriteID: 0a630aec828c127c0800000000000000
+      internalID: -4097774108339587424
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ValorantBetterTheFinals_0: -3786449227550518629
+      JSP_0: -4097774108339587424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
