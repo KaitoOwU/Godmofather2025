@@ -14,6 +14,7 @@ public class BookBalancing : MonoBehaviour
     [field:SerializeField] public Transform BookTransform { get; private set; }
     [field:SerializeField] public Color MinColor { get; private set; }
     [field:SerializeField] public Color MaxColor { get; private set; }
+    [field:SerializeField] public float TimeBeforeLoss { get; private set; }
 
     [Header("Events")]
     [SerializeField] private UnityEvent _OnCompletion;
@@ -33,6 +34,13 @@ public class BookBalancing : MonoBehaviour
 
     private void Update()
     {
+        TimeBeforeLoss -= Time.deltaTime;
+        if (TimeBeforeLoss <= 0f)
+        {
+            GameManager.Instance.BookBalance.BookPlacementFailed();
+            Destroy(gameObject);
+        }
+        
         _balanceInterval = Mathf.PingPong(Time.time, 2.0f) - 1.0f;
         BalanceGoodSpot.rectTransform.position = new Vector3(_balanceInterval * GaugeBalanceWideness, BalanceGoodSpot.rectTransform.position.y,
             BalanceGoodSpot.rectTransform.position.z);

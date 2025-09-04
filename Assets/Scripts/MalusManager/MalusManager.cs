@@ -2,23 +2,61 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class MalusManager : MonoBehaviour
 {
-    
+    [field:SerializeField] public float TimeBeforeMaledictions { get; private set; }
     [field:SerializeField] public float MalusDuration { get; private set; }
     [field:SerializeField] public RectTransform MalusesUI { get; private set; }
     
     public float SpeedMultiplier { get; private set; }
     public bool AreControlsReversed { get; private set; }
+    public bool IsMaledictionInProgress { get; private set; }
+
+    private void Start()
+    {
+        StartCoroutine(MalusGameLoop());
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad0))
         {
             StartCoroutine(ApplyMalus(MalusType.RANDOM_DVD_SPRITE));
+        }
+    }
+
+    private IEnumerator MalusGameLoop()
+    {
+        while (true)
+        {
+            float timer = 0;
+            while (timer <= TimeBeforeMaledictions || !Input.GetKeyDown(KeyCode.KeypadDivide))
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
+            IsMaledictionInProgress = true;
+            
+            GameObject malediction = Resources.Load<GameObject>("Prefabs/-- MALEDICTION --");
+            Malediction curseObj = Instantiate(malediction, Vector3.zero, Quaternion.identity).GetComponent<Malediction>();
+            yield return curseObj.GhostObj.DOMoveY(0, 1.5f).SetEase(Ease.OutBounce).WaitForCompletion();
+            curseObj.GhostObj.DOScale(0.4f, 0.75f).SetEase(Ease.OutElastic);
+
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+
+            curseObj.Particles.Stop();
+            yield return curseObj.GhostObj.GetComponent<SpriteRenderer>().DOFade(0f, 1.5f).WaitForCompletion();
+
+            yield return new WaitForSecondsRealtime(5f);
+            
+            Destroy(curseObj.gameObject);
+            IsMaledictionInProgress = false;
+            timer = 0;
         }
     }
 
