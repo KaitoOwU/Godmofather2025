@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Livre_Biblioth\xE8que_Bleu_0": 1900744338987579847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

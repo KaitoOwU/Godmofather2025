@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Livre_Face_UI_Rouge_0: -1204551967820725020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

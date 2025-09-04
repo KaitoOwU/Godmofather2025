@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Livre_Face_UI_Violet_0: 8016992132489182250
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

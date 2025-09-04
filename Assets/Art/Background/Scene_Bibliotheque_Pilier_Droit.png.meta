@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scene_Bibliotheque_Pilier_Droit_0: -6009571209364311394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
