@@ -87,6 +87,7 @@ public class Place : MonoBehaviour
     //Called in LibraryManager
     public void BecameFreePlace()
     {
+        //Debug.Log("jsuis la");
         _isFree = true;
     }
 
@@ -113,6 +114,8 @@ public class Place : MonoBehaviour
     // Called in LibraryArea
     public void SetVisibility(bool visible)
     {
+        if (_spriteRenderer == null) return;
+
         _canInteract = visible;
 
         // highlight free places
