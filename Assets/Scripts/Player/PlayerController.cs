@@ -45,9 +45,13 @@ public class PlayerController : MonoBehaviour
         _moveInput.action.started += OnMove;
         _moveInput.action.performed += OnMove;
         _moveInput.action.canceled += OnMoveCanceled;
+        
 
         _interactInput.action.started += OnInteract;
         _interactInput.action.performed += OnInteract;
+        
+        _moveInput.action.Enable();
+        _interactInput.action.Enable();
     }
 
     private void OnDisable()
@@ -58,6 +62,9 @@ public class PlayerController : MonoBehaviour
 
         _interactInput.action.started -= OnInteract;
         _interactInput.action.performed -= OnInteract;
+
+        _moveInput.action.Disable();
+        _interactInput.action.Disable();
     }
 
     private void OnMove(InputAction.CallbackContext ctx)
