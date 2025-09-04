@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WindWakerSmoke_0: 5129708223489990958
+      WindWakerSmoke_1: -8646598540176480071
+      WindWakerSmoke_2: 2778520613553514629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

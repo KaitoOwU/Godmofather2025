@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = System.Random;
 
 public class BookBalanceManager : MonoBehaviour
 {
@@ -14,10 +15,10 @@ public class BookBalanceManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha0))
-        //{
-        //    OnBookPlacementStarted?.Invoke(Vector3.zero);
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            OnBookPlacementStarted?.Invoke(new Vector3(UnityEngine.Random.Range(-4, 4), UnityEngine.Random.Range(-4, 4), 0));
+        }
     }
 
     public void BookPlacementStarted(Vector3 position)
