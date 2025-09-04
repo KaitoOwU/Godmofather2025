@@ -1,17 +1,20 @@
 using UnityEngine;
 
 using System.Collections.Generic;
+using System;
 
 public class LibraryArea : MonoBehaviour, ITrigger
 {
-    #region
-    // to randomize later
-    [SerializeField] private List<Transform> _allFreePlaces = new List<Transform>();
+    #region variables
+    private GameObject[] _allFreePlaces ;
 
-    private List<FreePlace> _myPlaces = new List<FreePlace>();
+    private List<Place> _myPlaces = new List<Place>();
 
     //components
     private Collider2D _coll;
+
+    //scripts
+    LibraryManager _libraryManager;
 
     #endregion
 
@@ -20,24 +23,47 @@ public class LibraryArea : MonoBehaviour, ITrigger
         _coll = GetComponent<Collider2D>();
     }
 
-    void Start()
+
+    void OnEnable()
     {
-        //waiting for random pos
-        GetAllMyFreePlaces();
+        _libraryManager = FindAnyObjectByType<LibraryManager>();
+
+        // Subscribe to the event if the manager is found
+        if (_libraryManager != null)
+        {
+            _libraryManager.OnPlacesGenerated += GetAllFreePlaces;
+        }
     }
 
-    private void GetAllMyFreePlaces()
+    void OnDisable()
+    {
+        // Always unsubscribe to prevent memory leaks
+        if (_libraryManager != null)
+        {
+            _libraryManager.OnPlacesGenerated -= GetAllFreePlaces;
+        }
+    }
+
+    private void GetAllFreePlaces()
+    {
+        _allFreePlaces = _libraryManager.FreePlaces;
+
+        //waiting for random pos
+        SetMyFreePlaces();
+    }
+
+    private void SetMyFreePlaces()
     {
         // check all created places and order them in the different library areas
-        foreach (Transform t in _allFreePlaces)
+        foreach (GameObject g in _allFreePlaces)
         {
             //2d
-            Vector3 pos = t.position;
+            Vector3 pos = g.transform.position;
             pos.z = _coll.bounds.center.z; 
 
             if (_coll.bounds.Contains(pos))
             {
-                _myPlaces.Add(t.GetComponent<FreePlace>());
+                _myPlaces.Add(g.GetComponent<Place>());
             }
         }
     }
@@ -48,7 +74,7 @@ public class LibraryArea : MonoBehaviour, ITrigger
         if (_myPlaces.Count == 0) return;
 
         //highlight all interactable objects
-        foreach (FreePlace p in _myPlaces)
+        foreach (Place p in _myPlaces)
         {
             p.SetVisibility(true);
         }
@@ -59,7 +85,7 @@ public class LibraryArea : MonoBehaviour, ITrigger
         if (_myPlaces.Count == 0) return;
 
         //disable interactability
-        foreach (FreePlace p in _myPlaces)
+        foreach (Place p in _myPlaces)
         {
             p.SetVisibility(false);
         }

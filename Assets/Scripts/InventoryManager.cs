@@ -13,10 +13,12 @@ public class InventoryManager : MonoBehaviour
     public bool IsFull => _inventory[0] != null;
 
     //nb books to collect
-    private int _nbBooks = 4;
+    private int _nbBooks = 6;
 
     //Scripts
     private PlayerController _pc;
+
+    private GameObject _myPlace;
 
     private void Awake()
     {
@@ -41,6 +43,13 @@ public class InventoryManager : MonoBehaviour
         _pc.ResetInteractablity();
     }
 
+    private void ResetInventory()
+    {
+        _inventory = new Book[1];
+        ViewItem(false);
+    }
+
+    // -- PLACING --
     public void PlaceBook()
     {
         // Clear inventory
@@ -51,6 +60,7 @@ public class InventoryManager : MonoBehaviour
         CheckNbBooksStored();
 
         //visual book in library
+        _myPlace.GetComponent<Place>().FillFreePlace();
         //supprimer le book placement
         //afficher le book dans la biblio
 
@@ -58,12 +68,11 @@ public class InventoryManager : MonoBehaviour
         _pc.SetControls(true);
     }
 
-
-    private void ResetInventory()
+    public void SetMyPlace(GameObject p)
     {
-        _inventory = new Book[1];
-        ViewItem(false);
+        _myPlace = p;
     }
+
 
     private void ViewItem(bool visible)
     {
@@ -76,6 +85,7 @@ public class InventoryManager : MonoBehaviour
 
         if (_nbBooks == 0)
             Debug.Log("Win");
+            //_pc.SetControls(false); // to edit marche pas pr l instant
             // declencher la win activeer le canva
     }
 

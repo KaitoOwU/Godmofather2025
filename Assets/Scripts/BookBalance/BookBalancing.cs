@@ -26,6 +26,9 @@ public class BookBalancing : MonoBehaviour
     //Scripts
     InventoryManager _inventory;
 
+    //book infos
+    private GameObject _myPlace;
+
     private void Awake()
     {
         BalanceGoodSpot.color = MinColor;
