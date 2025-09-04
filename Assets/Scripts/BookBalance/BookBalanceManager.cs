@@ -8,6 +8,7 @@ public class BookBalanceManager : MonoBehaviour
     [field:SerializeField] public GameObject BookObject { get; private set; }
     
     public event Action<Vector3> OnBookPlacementStarted;
+    public event Action OnBookPlacementFailed;
     public event Action OnBookPlacementCompleted;
     
 
@@ -30,4 +31,6 @@ public class BookBalanceManager : MonoBehaviour
     }
 
     private void StartBookPlacement(Vector3 pos) => Instantiate(BookObject, pos, Quaternion.identity);
+
+    public void BookPlacementFailed() => OnBookPlacementFailed?.Invoke();
 }
