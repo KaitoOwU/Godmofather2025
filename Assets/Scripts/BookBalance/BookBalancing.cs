@@ -34,21 +34,11 @@ public class BookBalancing : MonoBehaviour
 
     private void Update()
     {
-        TimeBeforeLoss -= Time.deltaTime;
-        if (TimeBeforeLoss <= 0f)
-        {
-            GameManager.Instance.BookBalance.BookPlacementFailed();
-            Destroy(gameObject);
-        }
-        
-        _balanceInterval = Mathf.PingPong(Time.time, 2.0f) - 1.0f;
-        BalanceGoodSpot.rectTransform.position = new Vector3(_balanceInterval * GaugeBalanceWideness, BalanceGoodSpot.rectTransform.position.y,
-            BalanceGoodSpot.rectTransform.position.z);
+        _balanceCursorInterval = Mathf.Clamp01(_balanceCursorInterval + Time.deltaTime * Input.GetAxis("Horizontal") * (GameManager.Instance.Malus.AreControlsReversed ? -1 : 1));
+        _balanceInterval = Mathf.PingPong(Time.time, 1.0f);
 
-        _balanceCursorInterval =
-            Mathf.Clamp(_balanceCursorInterval + Input.GetAxis("Horizontal") * (GameManager.Instance.Malus.AreControlsReversed ? -1 : 1) * Time.deltaTime * 2.0f, -1f, 1f);
-        BalanceCursor.rectTransform.position = new Vector3(_balanceCursorInterval * GaugeWideness, BalanceCursor.rectTransform.position.y,
-            BalanceCursor.rectTransform.position.z);
+        BalanceGoodSpot.rectTransform.localPosition = new Vector3(Mathf.Lerp(-1.5812f, 1.5812f, _balanceInterval), 0, 0);
+        BalanceCursor.rectTransform.localPosition = new Vector3(Mathf.Lerp(-1.8562f, 1.8562f, _balanceCursorInterval), 0, 0);
 
         if (IsGaugeInsideGoodZone())
         {
