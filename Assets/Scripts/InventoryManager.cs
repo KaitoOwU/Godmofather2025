@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Image _imgItem;
 
     private Book[] _inventory = new Book[1];
+    public bool IsFull => _inventory[0] != null;
 
-    private bool IsFull => _inventory[0] != null;
+    //nb books to collect
+    private int _nbBooks = 4;
+
+    //Scripts
     private PlayerController _pc;
 
     private void Awake()
@@ -38,9 +43,19 @@ public class InventoryManager : MonoBehaviour
 
     public void PlaceBook()
     {
-        // Clear
+        // Clear inventory
         _inventory[0] = null;
         ViewItem(false);
+
+        //check the number of books stored
+        CheckNbBooksStored();
+
+        //visual book in library
+        //supprimer le book placement
+        //afficher le book dans la biblio
+
+        //reset controls after place book
+        _pc.SetControls(true);
     }
 
 
@@ -53,6 +68,15 @@ public class InventoryManager : MonoBehaviour
     private void ViewItem(bool visible)
     {
         _imgItem.enabled = visible;
+    }
+
+    private void CheckNbBooksStored()
+    {
+        _nbBooks -= 1;
+
+        if (_nbBooks == 0)
+            Debug.Log("Win");
+            // declencher la win activeer le canva
     }
 
 }

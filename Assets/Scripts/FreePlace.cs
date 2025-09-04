@@ -68,7 +68,8 @@ public class FreePlace : MonoBehaviour
     {
         if (!_canInteract) return;
 
-        _OnClic?.Invoke(transform.position);
+        if (_inventoryMgr.IsFull)
+            _OnClic?.Invoke(transform.position);
     }
 
     public void SetVisibility(bool visible)

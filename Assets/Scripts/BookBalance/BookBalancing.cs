@@ -16,10 +16,6 @@ public class BookBalancing : MonoBehaviour
     [field:SerializeField] public Color MaxColor { get; private set; }
     [field:SerializeField] public float TimeBeforeLoss { get; private set; }
 
-    [Header("Events")]
-    [SerializeField] private UnityEvent _OnCompletion;
-    [SerializeField] private UnityEvent _OnDefeat;
-
     private float _balanceInterval;
     private float _balanceCursorInterval;
     private float _completionState;
@@ -27,9 +23,17 @@ public class BookBalancing : MonoBehaviour
     private float GaugeBalanceWideness => (BalanceGauge.rectTransform.rect.width - BalanceGoodSpot.rectTransform.rect.width) / 2.0f;
     private float GaugeWideness => BalanceGauge.rectTransform.rect.width / 2.0f;
 
+    //Scripts
+    InventoryManager _inventory;
+
     private void Awake()
     {
         BalanceGoodSpot.color = MinColor;
+    }
+
+    private void Start()
+    {
+        _inventory= FindAnyObjectByType<InventoryManager>();
     }
 
     private void Update()
@@ -48,7 +52,7 @@ public class BookBalancing : MonoBehaviour
             if (_completionState >= 1.0f)
             {
                 // call win
-                _OnCompletion?.Invoke();
+                _inventory.PlaceBook();
 
                 Destroy(gameObject);
             }
