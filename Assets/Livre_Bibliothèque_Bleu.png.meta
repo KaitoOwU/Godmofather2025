@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3b438271d43af0643bab7dde05bffd22
+guid: 5fe6cfe46c7dc9b4998a0dd2118a8ce9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3230091523037828975
-    second: "Livre_Biblioth\xE8que_Violet_0"
+      213: 1900744338987579847
+    second: "Livre_Biblioth\xE8que_Bleu_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Livre_Biblioth\xE8que_Violet_0"
+      name: "Livre_Biblioth\xE8que_Bleu_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1986451afd86c23d0800000000000000
-      internalID: -3230091523037828975
+      spriteID: 7c9703ed7ecc06a10800000000000000
+      internalID: 1900744338987579847
       vertices: []
       indices: 
       edges: []
