@@ -4788,6 +4788,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8728987134648359196, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
+      propertyPath: _maxSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728987134648359196, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
+      propertyPath: _acceleration
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
