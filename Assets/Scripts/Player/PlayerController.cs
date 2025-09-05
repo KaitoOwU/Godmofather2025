@@ -1,5 +1,3 @@
-using DG.Tweening;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -210,6 +208,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!_hasControls)
+            return;
+        
         if (other.TryGetComponent<ITrigger>(out var enter))
         {
             enter.OnEnter();
@@ -225,6 +226,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (!_hasControls)
+            return;
+        
         //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
@@ -243,6 +247,9 @@ public class PlayerController : MonoBehaviour
         //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
+            if (!_hasControls)
+                return;
+            
             _canInteract = false;
             _iInteractable = null;
         }

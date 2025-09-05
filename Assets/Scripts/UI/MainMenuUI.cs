@@ -25,8 +25,8 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        _mainMenu.DOAnchorPos3DY(-135, 1f).SetEase(Ease.OutBounce);
-        ((RectTransform)_play.transform).DOAnchorPos3DY(-293, 1.5f).SetEase(Ease.OutBounce);
-        ((RectTransform)_quit.transform).DOAnchorPos3DY(-423, 2f).SetEase(Ease.OutBounce);
+        _mainMenu.DOAnchorPos3DY(-263, 1f).SetEase(Ease.OutBounce);
+        ((RectTransform)_play.transform).DOAnchorPos3DY(-574, 1.5f).SetEase(Ease.OutBounce);
+        ((RectTransform)_quit.transform).DOAnchorPos3DY(-794, 2f).SetEase(Ease.OutBounce);
     }
 }
