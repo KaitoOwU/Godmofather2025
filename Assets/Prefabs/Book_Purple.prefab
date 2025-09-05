@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7311073246327926482}
   - component: {fileID: 3579844516276235117}
   - component: {fileID: 3699457343319453212}
-  - component: {fileID: 3091184668392784673}
+  - component: {fileID: -6740031819155360092}
   m_Layer: 0
-  m_Name: Book 1
+  m_Name: Book_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1204551967820725020, guid: b4cf30ab8afa5e84da5a510b40c369da, type: 3}
+  m_Sprite: {fileID: 5290247155875883592, guid: 038b39cf325ae854ca846d22a4c9a41e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f66d95f4aef943a6c47b1052b2fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &3091184668392784673
-CircleCollider2D:
+--- !u!61 &-6740031819155360092
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,5 +135,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 1.32
+  m_Offset: {x: -0.009042978, y: 0.04766798}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2, y: 0.67}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.2098117, y: 1.4731207}
+  m_EdgeRadius: 0
