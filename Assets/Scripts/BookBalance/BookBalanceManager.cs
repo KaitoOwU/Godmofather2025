@@ -36,6 +36,7 @@ public class BookBalanceManager : MonoBehaviour
     public void BookPlacementCompleted()
     {
         OnBookPlacementCompleted?.Invoke();
+        GameManager.Instance.Sounds.PlaySound(SoundManager.AudioType.PUT_BOOK);
     }
 
     private void OnEnable()

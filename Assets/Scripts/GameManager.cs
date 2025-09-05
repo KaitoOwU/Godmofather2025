@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [field:SerializeField] public ScoreUI Score { get; private set; }
+    [field:SerializeField] public SoundManager Sounds { get; private set; }
     public BookBalanceManager BookBalance { get; private set; }
     public MalusManager Malus { get; private set; }
 
