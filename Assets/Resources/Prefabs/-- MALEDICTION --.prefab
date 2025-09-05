@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1003141165304083867}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -7.48, z: 0}
+  m_LocalPosition: {x: 0, y: -7.48, z: -2.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,7 +664,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
+    type: 18
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -4782,7 +4782,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 8f51b040a71fc954f8684ca740c2c869, type: 2}
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4933,6 +4933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5374656970975910220}
   - component: {fileID: 6158494354310914354}
+  - component: {fileID: 4022750090640451118}
   m_Layer: 0
   m_Name: -- MALEDICTION --
   m_TagString: Untagged
@@ -4971,3 +4972,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Particles>k__BackingField: {fileID: 7323997583554615421}
   <GhostObj>k__BackingField: {fileID: 4932845881662202773}
+--- !u!210 &4022750090640451118
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578030428966171892}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_SortAtRoot: 0

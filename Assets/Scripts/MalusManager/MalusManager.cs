@@ -34,12 +34,14 @@ public class MalusManager : MonoBehaviour
         while (true)
         {
             float timer = 0;
-            while (timer <= TimeBeforeMaledictions || !Input.GetKeyDown(KeyCode.KeypadDivide))
+            while (timer < TimeBeforeMaledictions)
             {
                 timer += Time.deltaTime;
-                yield return null;
+                yield return new WaitForEndOfFrame();
+                Debug.Log($"{timer < TimeBeforeMaledictions}");
             }
 
+            Debug.Log("<color=red>MALEDICTION");
             IsMaledictionInProgress = true;
             
             GameObject malediction = Resources.Load<GameObject>("Prefabs/-- MALEDICTION --");
@@ -107,7 +109,7 @@ public class MalusManager : MonoBehaviour
                 
                 while (duration < MalusDuration + 0.5f)
                 {
-                    img.rectTransform.position += (Vector3)directions[currentDirection] * (Time.deltaTime * 3.0f);
+                    img.rectTransform.position += (Vector3)directions[currentDirection] * (Time.deltaTime * 150.0f);
                     if (!MalusesUI.rect.Contains(img.rectTransform.anchoredPosition))
                     {
                         currentDirection++;

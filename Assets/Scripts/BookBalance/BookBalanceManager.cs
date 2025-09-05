@@ -24,6 +24,12 @@ public class BookBalanceManager : MonoBehaviour
 
     public void BookPlacementStarted(Vector3 position)
     {
+        position = new Vector3(
+            Mathf.Clamp(position.x, -8.7f, 8.7f),
+            Mathf.Clamp(position.y, -2.4f, 3.16f),
+            position.z
+        );
+        
         OnBookPlacementStarted?.Invoke(position);
     }
 
