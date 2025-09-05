@@ -45,6 +45,11 @@ public class BookBalancing : MonoBehaviour
         BalanceGoodSpot.rectTransform.localPosition = new Vector3(Mathf.Lerp(-1.425f, 1.425f, _balanceInterval), BalanceGoodSpot.rectTransform.localPosition.y, BalanceGoodSpot.rectTransform.localPosition.z);
         BalanceCursor.rectTransform.localPosition = new Vector3(Mathf.Lerp(-1.7512f, 1.7512f, _balanceCursorInterval), BalanceCursor.rectTransform.localPosition.y, BalanceCursor.rectTransform.localPosition.z);
 
+        if (GameManager.Instance.Malus.IsMaledictionInProgress)
+        {
+            Destroy(gameObject);
+        }
+
         if (IsGaugeInsideGoodZone())
         {
             _completionState += Time.deltaTime / 3.0f;

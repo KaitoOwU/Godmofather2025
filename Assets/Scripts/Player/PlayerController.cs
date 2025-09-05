@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     // physics
     private Rigidbody2D _rb;
+    private Animator _animator;
     private Vector2 _velocity;
     private Vector2 _dir;
 
@@ -89,6 +90,8 @@ public class PlayerController : MonoBehaviour
     private void Init()
     {
         _state = STATE.WALK;
+        _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
    
@@ -97,6 +100,7 @@ public class PlayerController : MonoBehaviour
         if(!_hasControls) return;
 
         Vector2 targetVelocity = Vector2.zero;
+        _animator.SetFloat("speed", _rb.linearVelocity.magnitude);
 
         switch (_state)
         {
