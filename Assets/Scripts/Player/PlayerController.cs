@@ -181,6 +181,9 @@ public class PlayerController : MonoBehaviour
     public void SetControls(bool hasControls)
     {
         _hasControls = hasControls;
+
+        if (_hasControls == false)
+            _rb.linearVelocity = Vector2.zero;
     }
 
     #endregion
@@ -207,6 +210,16 @@ public class PlayerController : MonoBehaviour
             enter.OnEnter();
         }
 
+        //Interact
+        if (other.TryGetComponent<IInteractable>(out var interactable))
+        {
+            _canInteract = true;
+            _iInteractable = interactable;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
         //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {

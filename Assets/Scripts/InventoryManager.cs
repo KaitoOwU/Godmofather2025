@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,11 +10,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Image _imgSlot;
     [SerializeField] private Image _imgItem;
 
-    private Book[] _inventory = new Book[1];
+    public event Action OnWin;
     public bool IsFull => _inventory[0] != null;
 
-    //nb books to collect
-    private int _nbBooks = 6;
+    private Book[] _inventory = new Book[1]; 
+    private int _nbBooks = 6; //books to collect
 
     //Scripts
     private PlayerController _pc;
@@ -84,9 +85,14 @@ public class InventoryManager : MonoBehaviour
         _nbBooks -= 1;
 
         if (_nbBooks == 0)
-            Debug.Log("Win");
+        {
+            // -- DEBUG --
+            //Debug.Log("Win");
+
+            OnWin?.Invoke();
             //_pc.SetControls(false); // to edit marche pas pr l instant
             // declencher la win activeer le canva
+        }
     }
 
 }

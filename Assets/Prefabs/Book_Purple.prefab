@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3787050815225213670
+--- !u!1 &3528567313084127804
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 513884771031517014}
-  - component: {fileID: 5110603252759254445}
-  - component: {fileID: 5078909456450370835}
-  - component: {fileID: 7800936485386373374}
+  - component: {fileID: 7311073246327926482}
+  - component: {fileID: 3579844516276235117}
+  - component: {fileID: 3699457343319453212}
+  - component: {fileID: -6740031819155360092}
   m_Layer: 0
-  m_Name: Place
-  m_TagString: Place
+  m_Name: Book_Purple
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &513884771031517014
+--- !u!4 &7311073246327926482
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3787050815225213670}
+  m_GameObject: {fileID: 3528567313084127804}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.82, y: 1.17, z: -1.02}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.75, y: -3.9899998, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5110603252759254445
+--- !u!212 &3579844516276235117
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3787050815225213670}
+  m_GameObject: {fileID: 3528567313084127804}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -3230091523037828975, guid: 3b438271d43af0643bab7dde05bffd22, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 5290247155875883592, guid: 038b39cf325ae854ca846d22a4c9a41e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,54 +89,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5078909456450370835
+--- !u!114 &3699457343319453212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3787050815225213670}
+  m_GameObject: {fileID: 3528567313084127804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3341eab82cd11a84296eb2265c1ecdc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 561f66d95f4aef943a6c47b1052b2fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleIncrease: 1.2
-  _interactableColor: {r: 0.4970848, g: 1, b: 0.4039216, a: 1}
-  _OnClic:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8772260037426647611, guid: abe3225cc52bc51449101d4e2e802f20, type: 3}
-        m_TargetAssemblyTypeName: BookBalanceManager, Assembly-CSharp
-        m_MethodName: BookPlacementStarted
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8728987134648359196, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: SetControls
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!61 &7800936485386373374
+--- !u!61 &-6740031819155360092
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3787050815225213670}
+  m_GameObject: {fileID: 3528567313084127804}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -164,15 +135,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.009042978, y: 0.04766798}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 1.47}
+    oldSize: {x: 1.2, y: 0.67}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2098117, y: 1.4731207}
   m_EdgeRadius: 0

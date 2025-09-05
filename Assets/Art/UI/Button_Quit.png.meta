@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73a80294013468b49b86e4ac01e41836
+guid: c66aa214db98cee4397a766c44f48b36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1900744338987579847
-    second: "Livre_Biblioth\xE8que_Bleu_0"
+      213: 5312243734178013497
+    second: Button_Quit_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Livre_Biblioth\xE8que_Bleu_0"
+      name: Button_Quit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 83
-        height: 136
+        width: 792
+        height: 357
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c9703ed7ecc06a10800000000000000
-      internalID: 1900744338987579847
+      spriteID: 931a9ffd781e8b940800000000000000
+      internalID: 5312243734178013497
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Livre_Biblioth\xE8que_Bleu_0": 1900744338987579847
+      Button_Quit_0: 5312243734178013497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
