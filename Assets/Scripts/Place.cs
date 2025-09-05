@@ -20,7 +20,7 @@ public class Place : MonoBehaviour
 
     //interact
     private bool _canInteract;
-    private Color _freePlaceColor;
+    private Color _freePlaceColor = Color.white;
     private Color _defaultColor = Color.white;
 
     //Hover
@@ -100,7 +100,7 @@ public class Place : MonoBehaviour
     {
         if (isFree)
         {
-            _freePlaceColor = Color.gray;
+            _freePlaceColor.a = 0;
             _spriteRenderer.color = _freePlaceColor;
         }
         else

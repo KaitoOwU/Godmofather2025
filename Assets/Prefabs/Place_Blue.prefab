@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scaleIncrease: 1.2
-  _interactableColor: {r: 0.4970848, g: 1, b: 0.4039216, a: 1}
+  _interactableColor: {r: 0.23529413, g: 0.23529413, b: 0.23529413, a: 0.85882354}
   _OnClic:
     m_PersistentCalls:
       m_Calls:
