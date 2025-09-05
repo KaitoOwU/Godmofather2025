@@ -39,6 +39,7 @@ public class InventoryManager : MonoBehaviour
         _inventory[0]= item;
         ViewItem(true);
         item.gameObject.SetActive(false);
+        GameManager.Instance.Sounds.PlaySound(SoundManager.AudioType.TAKE_BOOK);
 
         //init coll iinteractable
         _pc.ResetInteractablity();

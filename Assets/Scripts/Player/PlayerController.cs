@@ -33,12 +33,8 @@ public class PlayerController : MonoBehaviour
     private IInteractable _iInteractable;
     private bool _hasControls = true;
 
-    private Tween _movementTween;
-
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
-
         Init();
     }
 

@@ -43,6 +43,7 @@ public class MalusManager : MonoBehaviour
             
             IsMaledictionInProgress = true;
             FindFirstObjectByType<PlayerController>().SetControls(false);
+            GameManager.Instance.Sounds.PlaySound(SoundManager.AudioType.CURSE_APPEAR);
             
             GameObject malediction = Resources.Load<GameObject>("Prefabs/-- MALEDICTION --");
             Malediction curseObj = Instantiate(malediction, Vector3.zero, Quaternion.identity).GetComponent<Malediction>();
@@ -70,6 +71,7 @@ public class MalusManager : MonoBehaviour
         {
             case MalusType.SPEED_REDUCED:
                 
+                GameManager.Instance.Sounds.PlaySound(SoundManager.AudioType.CURSE_APPEAR);
                 yield return DOTween.To(() => SpeedMultiplier, (x) => SpeedMultiplier = x, 0.5f, 0.5f).WaitForCompletion();
                 yield return new WaitForSecondsRealtime(MalusDuration);
                 yield return DOTween.To(() => SpeedMultiplier, (x) => SpeedMultiplier = x, 0.5f, 0.5f).WaitForCompletion();
@@ -77,6 +79,7 @@ public class MalusManager : MonoBehaviour
                 break;
             case MalusType.SCREEN_REVERSED:
 
+                GameManager.Instance.Sounds.PlaySound(SoundManager.AudioType.CURSE_APPEAR);
                 yield return Camera.main.transform.DORotate(new Vector3(0, 0, 180), 1f).SetEase(Ease.InExpo).WaitForCompletion();
                 yield return new WaitForSecondsRealtime(MalusDuration);
                 yield return Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.InExpo).WaitForCompletion();
@@ -84,6 +87,7 @@ public class MalusManager : MonoBehaviour
                 break;
             case MalusType.KEYBINDS_REVERSED:
 
+                GameManager.Instance.Sounds.PlaySound(SoundManager.AudioType.CURSE_APPEAR);
                 AreControlsReversed = true;
                 yield return new WaitForSecondsRealtime(MalusDuration);
                 AreControlsReversed = false;
@@ -97,6 +101,7 @@ public class MalusManager : MonoBehaviour
                 Image img = Instantiate(spriteToAdd, MalusesUI.transform);
 
                 img.DOColor(new(1, 1, 1, 0.5f), 0.5f);
+                GameManager.Instance.Sounds.PlaySound(SoundManager.AudioType.SPRITE_ON_SCREEN);
 
                 float duration = 0;
                 
