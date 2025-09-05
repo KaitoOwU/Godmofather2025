@@ -181,6 +181,9 @@ public class PlayerController : MonoBehaviour
     public void SetControls(bool hasControls)
     {
         _hasControls = hasControls;
+
+        if (_hasControls == false)
+            _rb.linearVelocity = Vector2.zero;
     }
 
     #endregion
@@ -195,7 +198,7 @@ public class PlayerController : MonoBehaviour
 
     public void ResetInteractablity()
     {
-        _iInteractable = null;
+        //_iInteractable = null;
     }
 
     //Trigger
