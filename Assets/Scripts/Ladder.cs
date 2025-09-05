@@ -89,7 +89,7 @@ public class Ladder : MonoBehaviour, IInteractable, ITrigger
 
             // -- TO EDIT --
             // library coll
-            _libraryColl.enabled = true;
+            if(_libraryColl !=null) _libraryColl.enabled = true;
 
         }
         // CLIMB

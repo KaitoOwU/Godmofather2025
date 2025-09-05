@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
 
     public void ResetInteractablity()
     {
-        //_iInteractable = null;
+        _iInteractable = null;
     }
 
     //Trigger
@@ -210,6 +210,16 @@ public class PlayerController : MonoBehaviour
             enter.OnEnter();
         }
 
+        //Interact
+        if (other.TryGetComponent<IInteractable>(out var interactable))
+        {
+            _canInteract = true;
+            _iInteractable = interactable;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
         //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
