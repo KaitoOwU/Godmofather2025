@@ -18,13 +18,7 @@ public class ScoreUI : MonoBehaviour
     {
         TimerText.text = TimeSpan.FromSeconds(timer).Minutes + ":" + TimeSpan.FromSeconds(timer).Seconds + ":" + TimeSpan.FromSeconds(timer).Milliseconds;
         
-        BG.DOAnchorPos3DY(77.324f, 0.3f).SetEase(Ease.OutBounce);
-        Congrats.DOAnchorPos3DY(188.3603f, 0.6f).SetEase(Ease.OutBounce);
-        Bravo.DOAnchorPos3DY(169.05f, 0.9f).SetEase(Ease.OutBounce);
-        Timer.DOAnchorPos3DY(77.324f, 0.57f).SetEase(Ease.OutBounce).OnComplete(() =>
-        {
-            ((RectTransform)Quit.transform).DOAnchorPos3DY(-138, 0.57f).SetEase(Ease.OutBounce);
-        });
+        BG.DOAnchorPos3DY(0f, 0.3f).SetEase(Ease.OutBounce);
     }
     
 }
