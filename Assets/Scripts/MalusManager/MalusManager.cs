@@ -37,7 +37,7 @@ public class MalusManager : MonoBehaviour
             while (timer <= TimeBeforeMaledictions || !Input.GetKeyDown(KeyCode.KeypadDivide))
             {
                 timer += Time.deltaTime;
-                yield return null;
+                yield return new WaitForEndOfFrame();
             }
 
             IsMaledictionInProgress = true;
