@@ -13,7 +13,6 @@ public class BookBalancing : MonoBehaviour
     [field:SerializeField] public Image BalanceCursor { get; private set; }
     [field:SerializeField] public Color MinColor { get; private set; }
     [field:SerializeField] public Color MaxColor { get; private set; }
-    [field:SerializeField] public float TimeBeforeLoss { get; private set; }
 
     private float _balanceInterval;
     private float _balanceCursorInterval;

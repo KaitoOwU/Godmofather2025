@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Jauge_Rouge_0: 1108012284049806881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

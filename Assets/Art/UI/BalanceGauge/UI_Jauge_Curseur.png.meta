@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Jauge_Curseur_0: -4506657578188490187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

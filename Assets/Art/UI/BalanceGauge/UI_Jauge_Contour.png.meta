@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Jauge_Contour_0: -2731154349731513242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
