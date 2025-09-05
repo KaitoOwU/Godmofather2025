@@ -119,6 +119,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &7017896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8564547186045917831, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
+  m_PrefabInstance: {fileID: 6459308396375722527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7017900
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7368a7277c6194649bd435b1d9a1ca90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &12306158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3239,6 +3266,14 @@ PrefabInstance:
       propertyPath: '_allFreePlaces.Array.data[9]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2393845401103868308, guid: 77117f8d7e104d642a436142c2170053, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0683935
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393845401103868308, guid: 77117f8d7e104d642a436142c2170053, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.034196764
+      objectReference: {fileID: 0}
     - target: {fileID: 5406145927248642642, guid: 77117f8d7e104d642a436142c2170053, type: 3}
       propertyPath: m_Size.x
       value: 0.16
@@ -4128,6 +4163,14 @@ PrefabInstance:
     - target: {fileID: 1738715291537028217, guid: 77117f8d7e104d642a436142c2170053, type: 3}
       propertyPath: '_allFreePlaces.Array.data[9]'
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393845401103868308, guid: 77117f8d7e104d642a436142c2170053, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0244951
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393845401103868308, guid: 77117f8d7e104d642a436142c2170053, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.012247667
       objectReference: {fileID: 0}
     - target: {fileID: 5406145927248642642, guid: 77117f8d7e104d642a436142c2170053, type: 3}
       propertyPath: m_Size.x
@@ -8199,13 +8242,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 263136357518082187}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 775382030333351070}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8410,6 +8453,14 @@ PrefabInstance:
     - target: {fileID: 1738715291537028217, guid: 77117f8d7e104d642a436142c2170053, type: 3}
       propertyPath: '_allFreePlaces.Array.data[9]'
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393845401103868308, guid: 77117f8d7e104d642a436142c2170053, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0786068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393845401103868308, guid: 77117f8d7e104d642a436142c2170053, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.039303422
       objectReference: {fileID: 0}
     - target: {fileID: 5406145927248642642, guid: 77117f8d7e104d642a436142c2170053, type: 3}
       propertyPath: m_Size.x
@@ -15819,12 +15870,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1496575505786929027, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
+    - {fileID: 3117502514035018286, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1958880091510734910, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2027351227}
+    - targetCorrespondingSourceObject: {fileID: 8564547186045917831, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7017900}
   m_SourcePrefab: {fileID: 100100000, guid: 9b75dc5e6ba05994a968fbbd5127ea72, type: 3}
 --- !u!1 &6939505705401230536
 GameObject:
