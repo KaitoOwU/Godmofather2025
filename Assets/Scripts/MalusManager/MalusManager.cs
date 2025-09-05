@@ -38,7 +38,6 @@ public class MalusManager : MonoBehaviour
             {
                 timer += Time.deltaTime;
                 yield return new WaitForEndOfFrame();
-                Debug.Log($"{timer < TimeBeforeMaledictions}");
             }
             
             IsMaledictionInProgress = true;
