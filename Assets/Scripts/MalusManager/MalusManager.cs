@@ -40,9 +40,9 @@ public class MalusManager : MonoBehaviour
                 yield return new WaitForEndOfFrame();
                 Debug.Log($"{timer < TimeBeforeMaledictions}");
             }
-
-            Debug.Log("<color=red>MALEDICTION");
+            
             IsMaledictionInProgress = true;
+            FindFirstObjectByType<PlayerController>().SetControls(false);
             
             GameObject malediction = Resources.Load<GameObject>("Prefabs/-- MALEDICTION --");
             Malediction curseObj = Instantiate(malediction, Vector3.zero, Quaternion.identity).GetComponent<Malediction>();
@@ -51,13 +51,15 @@ public class MalusManager : MonoBehaviour
 
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
 
+            IsMaledictionInProgress = false;
+            FindFirstObjectByType<PlayerController>().SetControls(true);
+            
             curseObj.Particles.Stop();
             yield return curseObj.GhostObj.GetComponent<SpriteRenderer>().DOFade(0f, 1.5f).WaitForCompletion();
 
             yield return new WaitForSecondsRealtime(5f);
             
             Destroy(curseObj.gameObject);
-            IsMaledictionInProgress = false;
             timer = 0;
         }
     }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private bool _canInteract;
     private IInteractable _iInteractable;
     private bool _hasControls = true;
+
+    private Tween _movementTween;
 
     private void Awake()
     {
