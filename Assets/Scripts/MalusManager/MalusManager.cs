@@ -16,6 +16,8 @@ public class MalusManager : MonoBehaviour
     public bool AreControlsReversed { get; private set; }
     public bool IsMaledictionInProgress { get; private set; }
 
+    private float timer = 0f;
+
     private void Start()
     {
         StartCoroutine(MalusGameLoop());
@@ -23,9 +25,26 @@ public class MalusManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             StartCoroutine(ApplyMalus(MalusType.RANDOM_DVD_SPRITE));
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            StartCoroutine(ApplyMalus(MalusType.SCREEN_REVERSED));
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            StartCoroutine(ApplyMalus(MalusType.KEYBINDS_REVERSED));
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            StartCoroutine(ApplyMalus(MalusType.SPEED_REDUCED));
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            timer = TimeBeforeMaledictions;
         }
     }
 
@@ -33,7 +52,6 @@ public class MalusManager : MonoBehaviour
     {
         while (true)
         {
-            float timer = 0;
             while (timer < TimeBeforeMaledictions)
             {
                 timer += Time.deltaTime;
