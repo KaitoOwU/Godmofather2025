@@ -2983,13 +2983,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7e1e43824675247acaa10707a5130a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _takeBookSound: {fileID: 0}
-  _putBookSound: {fileID: 0}
-  _moveLadderSound: {fileID: 0}
-  _curseAppearSound: {fileID: 0}
-  _malusSound: {fileID: 0}
-  _spriteOnScreenMalusSound: {fileID: 0}
-  _balanceSound: {fileID: 0}
+  _takeBookSound: {fileID: 8300000, guid: 07e9cd0fea77a6c4dbb49ee3c5d7b065, type: 3}
+  _putBookSound: {fileID: 8300000, guid: a0bb774b2723e9d4195c2065ca363803, type: 3}
+  _moveLadderSound: {fileID: 8300000, guid: 270704cd759b8e9428cb2afe14c74f5d, type: 3}
+  _curseAppearSound: {fileID: 8300000, guid: e4185dff5e37d084b958a465881dd688, type: 3}
+  _malusSound: {fileID: 8300000, guid: 85fb6184225e1f941be851465d4d027e, type: 3}
+  _spriteOnScreenMalusSound: {fileID: 8300000, guid: 4931bdaa0bf1614458dc2ce4446ed0cd, type: 3}
+  _balanceSound: {fileID: 8300000, guid: b78ac8bb231f3184aa7a9affa0c733a7, type: 3}
 --- !u!82 &514991484
 AudioSource:
   m_ObjectHideFlags: 0
